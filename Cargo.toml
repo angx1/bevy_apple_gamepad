@@ -11,13 +11,13 @@ readme = "README.md"
 [dependencies]
 bevy_app = "0.20"
 bevy_ecs = "0.20"
-bevy_input = "0.20"
+bevy_input = { version = "0.20", features = ["gamepad"] }
 bevy_log = "0.20"
 bevy_platform = "0.20"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 objc2 = "0.6"
-objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSString", "NSArray"] }
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSString", "NSArray", "NSEnumerator"] }
 objc2-game-controller = { version = "0.3", default-features = false, features = [
     "std",
     "GCController",
