@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 description = "Gamepad support for Bevy on macOS through Apple's Game Controller framework (for controllers that gilrs can't read, e.g. Xbox controllers on macOS 14+)"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/TU_USUARIO/bevy_apple_gamepad"
 keywords = ["bevy", "gamepad", "macos", "controller", "gamedev"]
 categories = ["game-development"]
 readme = "README.md"
