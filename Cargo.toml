@@ -1,0 +1,34 @@
+[package]
+name = "bevy_apple_gamepad"
+version = "0.1.0"
+edition = "2024"
+description = "Gamepad support for Bevy on macOS through Apple's Game Controller framework (for controllers that gilrs can't read, e.g. Xbox controllers on macOS 14+)"
+license = "MIT OR Apache-2.0"
+keywords = ["bevy", "gamepad", "macos", "controller", "gamedev"]
+categories = ["game-development"]
+readme = "README.md"
+
+[dependencies]
+bevy_app = "0.20"
+bevy_ecs = "0.20"
+bevy_input = "0.20"
+bevy_log = "0.20"
+bevy_platform = "0.20"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSString", "NSArray"] }
+objc2-game-controller = { version = "0.3", default-features = false, features = [
+    "std",
+    "GCController",
+    "GCDevice",
+    "GCExtendedGamepad",
+    "GCControllerButtonInput",
+    "GCControllerDirectionPad",
+    "GCControllerAxisInput",
+    "GCControllerElement",
+    "GCPhysicalInputProfile",
+] }
+
+[dev-dependencies]
+bevy = { version = "0.20", default-features = false, features = ["2d", "ui"] }
